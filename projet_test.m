@@ -61,6 +61,16 @@ end
 figure(1)
 plot(x, y)
 
-res = linprog(f4,Abenefice,B2,[],[], lb, []);
+% Optimisation des stocks 
+B2 = [B; -13394*0.92];
+res_stocks = linprog(f3,Abenefice,B2,[],[], lb, [])
+sums = -f1'*res_stocks
+
+% Optimisation de l'utilisation des machines
+B2 = [B; -13394*0.56];
+res_pers = linprog(f4,Abenefice,B2,[],[], lb, [])
+sumpers = -f1'*res_pers
+
+%res = linprog(f4,Abenefice,B2,[],[], lb, []);
 %res2 = linprog(f2, A,B, Aeq, beq, lb, [])
 %sum = -f1'*res
