@@ -24,13 +24,24 @@ B = [   700;
     
 lb = [0; 0; 0; 0; 0; 0];
 
+
+% Optimisation pour le responsable commercial
+% (Equilibrage des famille (A/B/C) et (D/E/F) )
 Aeq = [ 1 1 1 -1 -1 -1];
-     
 beq = [0];
 
+%Optimisation pour le comptable
+%(calcul des bénéfices)
 f1 = [-43.66;-24.68; -42.9;-33.25; -23.88; -16.98];
+
+% Optimisation pour le responsable d'atelier
+% (Somme des produits finits)
 f2 = [-1;-1;-1;-1;-1;-1];
+
+% Optimisation pour le responsable des stocks
 f3 = [5; 5; 8; 6; 6; 5];
+
+% Optimisation pour le responsable du personnel
 f4 = [32; 11 ; 32; 22; 17; 37];
 
 A2 = [A;
